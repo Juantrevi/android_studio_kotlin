@@ -1,6 +1,7 @@
 package com.stu71563.firstapp
 
 import android.os.Bundle
+import android.os.Message
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -18,27 +19,40 @@ class MainActivity : ComponentActivity() {
         setContent {
             FirstAppTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background) {
-                    Greeting("Android 2")
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
                 }
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-            text = "Hello $name!",
-            modifier = modifier
-    )
-}
+//@Composable
+//fun Greeting(name: String, modifier: Modifier = Modifier) {
+//    Text(
+//            text = "Hello $name!",
+//            modifier = modifier
+//    )
+//}
 
+/*
+* @Composable
+* is a function that defines a UI component.
+* It is a function that takes in data and returns a UI component.
+* */
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun BirthdayCardPreview() {
     FirstAppTheme {
-        Greeting("Android")
+        BirthdayCard(message = "Happy Birthday!")
     }
+}
+
+@Composable
+fun BirthdayCard(message: String, modifier: Modifier = Modifier) {
+    Text(
+        text = "Happy Birthday!"
+    )
 }
